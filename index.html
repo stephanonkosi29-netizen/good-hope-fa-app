@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Hope FA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f8fc;
+      color: #0f172a;
+    }
+    .hero {
+      background: linear-gradient(90deg, #06b6d4, #0284c7, #1e3a8a);
+      color: white;
+      padding: 32px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      margin: 0 0 8px 0;
+      font-size: 36px;
+    }
+    .hero p {
+      margin: 0;
+      font-size: 18px;
+    }
+    .actions {
+      text-align: center;
+      padding: 20px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      background: #fbbf24;
+      color: #111827;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 6px;
+    }
+    .card {
+      max-width: 1100px;
+      margin: 0 auto 24px auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+    .footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Good Hope FA</h1>
+    <p>Official Public Match Centre</p>
+  </div>
 
+  <div class="actions">
+    <button class="button" onclick="copyLeagueLink()">Copy League Link</button>
+    <a class="button" href="https://goodhopelfa.leaguerepublic.com/index.html" target="_blank" rel="noreferrer">
+      Open League Site
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>Official LeagueRepublic Feed</h2>
+    <div id="lr-embed">Loading league data...</div>
+  </div>
+
+  <div class="footer">
+    Contact: goodhopelfa7806@gmail.com
+  </div>
+
+  <script>
+    function copyLeagueLink() {
+      navigator.clipboard.writeText('https://goodhopelfa.leaguerepublic.com/index.html');
+      alert('League link copied');
+    }
+    var embedID = '673657578';
+  </script>
+  <script src="https://api.leaguerepublic.com/client/api/embed/lr-embed.js"></script>
+</body>
+</html>
