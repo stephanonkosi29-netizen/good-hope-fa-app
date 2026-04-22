@@ -103,38 +103,6 @@
       font-size: 15px;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 13px 18px;
-      border-radius: 14px;
-      border: none;
-      background: linear-gradient(180deg, #f7c948, #f0b323);
-      color: #111827;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 8px 18px rgba(240, 179, 35, 0.24);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(240, 179, 35, 0.32);
-    }
-
-    .button.secondary {
-      background: white;
-      color: #0f172a;
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
-    }
-
     .side-stack {
       display: grid;
       gap: 18px;
@@ -155,45 +123,11 @@
     }
 
     .mini-value {
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 8px;
-    }
-
-    .quick-links {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-bottom: 18px;
-    }
-
-    .quick-link {
-      padding: 18px 20px;
-      border-radius: 18px;
-      text-decoration: none;
-      background: linear-gradient(135deg, #ffffff, #ecfeff);
-      color: #0f172a;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(186, 230, 253, 0.9);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .quick-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
-    }
-
-    .quick-link-title {
-      font-size: 17px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .quick-link-text {
-      font-size: 14px;
-      color: #475569;
-      line-height: 1.5;
+      word-break: break-word;
     }
 
     .feed-card {
@@ -216,7 +150,7 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
       margin-top: 16px;
     }
@@ -266,7 +200,6 @@
 
     @media (max-width: 900px) {
       .top-grid,
-      .quick-links,
       .about-grid {
         grid-template-columns: 1fr;
       }
@@ -310,16 +243,6 @@
         padding: 16px;
       }
 
-      .actions {
-        flex-direction: column;
-      }
-
-      .button,
-      .button.secondary {
-        width: 100%;
-        text-align: center;
-      }
-
       .embed-shell {
         padding: 6px;
       }
@@ -332,7 +255,7 @@
       <img src="Logo.png" alt="Good Hope FA Logo" />
       <h1>Good Hope FA</h1>
       <p>Official Public Match Centre</p>
-      <div class="hero-sub">Live division views, match hub, standings, team stats and player stats</div>
+      <div class="hero-sub">Follow fixtures, results, standings and player performance in one place</div>
     </div>
   </div>
 
@@ -340,60 +263,26 @@
     <div class="top-grid">
       <div class="panel hero-card">
         <div class="eyebrow">Club Hub</div>
-        <h2>Welcome to the Good Hope FA football app</h2>
+        <h2>Welcome to the Good Hope FA match centre</h2>
         <p>
-          This public match centre gives players, coaches, parents and supporters one place to follow official
-          league information. Use the official LeagueRepublic section below to switch between Division,
-          Match Hub, Standings, Team Stats and Player Stats.
+          Welcome to the official Good Hope FA match centre. Stay up to date with fixtures, results,
+          standings, and player performance in one place. This platform is designed for players,
+          coaches, parents and supporters to easily follow the progress of the league.
         </p>
-
-        <div class="actions">
-          <button class="button" onclick="copyLeagueLink()">Copy League Link</button>
-          <a class="button secondary" href="https://goodhopelfa.leaguerepublic.com/index.html" target="_blank" rel="noreferrer">
-            Open League Site
-          </a>
-        </div>
       </div>
 
       <div class="side-stack">
         <div class="panel mini-card">
-          <div class="eyebrow">Competition</div>
-          <div class="mini-value">GHLFA</div>
-          <p>Official tabbed feed connected and live for public viewing.</p>
-        </div>
-
-        <div class="panel mini-card">
           <div class="eyebrow">Contact</div>
-          <div class="mini-value" style="font-size:22px;">goodhopelfa7806@gmail.com</div>
+          <div class="mini-value">goodhopelfa7806@gmail.com</div>
           <p>Use this email for club-related enquiries and communication.</p>
         </div>
       </div>
     </div>
 
-    <div class="quick-links">
-      <a class="quick-link" href="https://goodhopelfa.leaguerepublic.com/index.html" target="_blank" rel="noreferrer">
-        <div class="quick-link-title">Public League Site</div>
-        <div class="quick-link-text">Open the full public LeagueRepublic site in a new tab.</div>
-      </a>
-
-      <a class="quick-link" href="https://stephanonkosi29-netizen.github.io/good-hope-fa-app/" target="_blank" rel="noreferrer">
-        <div class="quick-link-title">Public App Link</div>
-        <div class="quick-link-text">Share this app with players, supporters, parents and coaches.</div>
-      </a>
-
-      <a class="quick-link" href="#official-feed">
-        <div class="quick-link-title">Official Match Centre</div>
-        <div class="quick-link-text">Jump directly to the live league feed below.</div>
-      </a>
-    </div>
-
     <div class="panel feed-card" id="official-feed">
       <div class="eyebrow">Official Feed</div>
-      <h2>LeagueRepublic Match Centre</h2>
-      <p style="margin:0;color:#475569;font-size:15px;">
-        Use the built-in tabs to switch across division, match hub, standings, team stats and player stats.
-      </p>
-
+      <h2>Match Centre</h2>
       <div class="embed-shell">
         <div id="lr-embed">Loading league data...</div>
       </div>
@@ -406,10 +295,6 @@
         <div class="about-box">
           <h3>Official data</h3>
           <p>The live feed is powered by your LeagueRepublic embed, so the public sees trusted competition information.</p>
-        </div>
-        <div class="about-box">
-          <h3>Easy sharing</h3>
-          <p>This page gives you one clean public link to send to supporters without sending them into the admin area.</p>
         </div>
         <div class="about-box">
           <h3>Mobile friendly</h3>
@@ -431,11 +316,6 @@
   </div>
 
   <script>
-    function copyLeagueLink() {
-      navigator.clipboard.writeText('https://stephanonkosi29-netizen.github.io/good-hope-fa-app/');
-      alert('App link copied');
-    }
-
     var embedID = '673657578';
   </script>
   <script src="https://api.leaguerepublic.com/client/api/embed/lr-embed.js"></script>
