@@ -5,87 +5,437 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Good Hope FA</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f3f8fc;
+      background:
+        radial-gradient(circle at top left, #d9f4ff 0%, #eef8ff 30%, #f5f9fc 60%, #eef4f8 100%);
       color: #0f172a;
     }
+
     .hero {
-      background: linear-gradient(90deg, #06b6d4, #0284c7, #1e3a8a);
+      background: linear-gradient(135deg, #27b7df, #1d75c7 55%, #153a8a 100%);
       color: white;
-      padding: 32px 20px;
+      padding: 32px 20px 40px;
       text-align: center;
+      box-shadow: 0 10px 30px rgba(21, 58, 138, 0.18);
     }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero img {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.14);
+      padding: 8px;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
     .hero h1 {
-      margin: 0 0 8px 0;
-      font-size: 36px;
-    }
-    .hero p {
       margin: 0;
+      font-size: 46px;
+      line-height: 1.05;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      font-size: 21px;
+      color: #e0f2fe;
+    }
+
+    .hero-sub {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #dbeafe;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: -24px auto 40px;
+      padding: 0 16px;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.92);
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-card {
+      padding: 24px;
+    }
+
+    .hero-card h2,
+    .feed-card h2,
+    .about-card h2 {
+      margin: 0 0 10px;
       font-size: 18px;
+      color: #0f172a;
     }
+
+    .hero-card p,
+    .about-card p,
+    .mini-card p {
+      margin: 0;
+      line-height: 1.6;
+      color: #475569;
+      font-size: 15px;
+    }
+
     .actions {
-      text-align: center;
-      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
     }
+
     .button {
       display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
+      padding: 13px 18px;
+      border-radius: 14px;
       border: none;
-      background: #fbbf24;
+      background: linear-gradient(180deg, #f7c948, #f0b323);
       color: #111827;
-      font-weight: bold;
+      font-weight: 700;
       cursor: pointer;
       text-decoration: none;
-      margin: 6px;
+      box-shadow: 0 8px 18px rgba(240, 179, 35, 0.24);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .card {
-      max-width: 1100px;
-      margin: 0 auto 24px auto;
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(240, 179, 35, 0.32);
+    }
+
+    .button.secondary {
       background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      padding: 20px;
+      color: #0f172a;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
     }
-    .footer {
-      background: #1e3a8a;
-      color: white;
-      text-align: center;
+
+    .side-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .mini-card {
       padding: 20px;
-      margin-top: 24px;
+      min-height: 128px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0284c7;
+      margin-bottom: 8px;
+    }
+
+    .mini-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .quick-link {
+      padding: 18px 20px;
+      border-radius: 18px;
+      text-decoration: none;
+      background: linear-gradient(135deg, #ffffff, #ecfeff);
+      color: #0f172a;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(186, 230, 253, 0.9);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .quick-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
+    }
+
+    .quick-link-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .quick-link-text {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .feed-card {
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .embed-shell {
+      margin-top: 12px;
+      background: #f8fafc;
+      border-radius: 18px;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+    }
+
+    .about-card {
+      padding: 22px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .about-box {
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f8fdff, #eef8ff);
+      border: 1px solid #dbeafe;
+      padding: 16px;
+    }
+
+    .about-box h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      color: #0f172a;
+    }
+
+    .about-box p {
+      font-size: 14px;
+      margin: 0;
+      color: #475569;
+    }
+
+    .footer {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #153a8a, #0f2e6f);
+      color: white;
+      border-radius: 22px;
+      padding: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      box-shadow: 0 12px 28px rgba(21, 58, 138, 0.2);
+    }
+
+    .footer strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .footer span {
+      color: #dbeafe;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .top-grid,
+      .quick-links,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 26px 14px 34px;
+      }
+
+      .hero img {
+        width: 92px;
+        height: 92px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .page {
+        padding: 0 10px;
+      }
+
+      .hero-card,
+      .mini-card,
+      .feed-card,
+      .about-card {
+        padding: 16px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button,
+      .button.secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .embed-shell {
+        padding: 6px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="hero">
-  <img src="Logo.png" style="height:80px;margin-bottom:10px;"/>
-  <h1>Good Hope FA</h1>
-  <p>Official Public Match Centre</p>
-</div>
-
-  <div class="actions">
-    <button class="button" onclick="copyLeagueLink()">Copy League Link</button>
-    <a class="button" href="https://goodhopelfa.leaguerepublic.com/index.html" target="_blank" rel="noreferrer">
-      Open League Site
-    </a>
+    <div class="hero-inner">
+      <img src="Logo.png" alt="Good Hope FA Logo" />
+      <h1>Good Hope FA</h1>
+      <p>Official Public Match Centre</p>
+      <div class="hero-sub">Live division views, match hub, standings, team stats and player stats</div>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>Official LeagueRepublic Feed</h2>
-    <div id="lr-embed">Loading league data...</div>
-  </div>
+  <div class="page">
+    <div class="top-grid">
+      <div class="panel hero-card">
+        <div class="eyebrow">Club Hub</div>
+        <h2>Welcome to the Good Hope FA football app</h2>
+        <p>
+          This public match centre gives players, coaches, parents and supporters one place to follow official
+          league information. Use the official LeagueRepublic section below to switch between Division,
+          Match Hub, Standings, Team Stats and Player Stats.
+        </p>
 
-  <div class="footer">
-    Contact: goodhopelfa7806@gmail.com
+        <div class="actions">
+          <button class="button" onclick="copyLeagueLink()">Copy League Link</button>
+          <a class="button secondary" href="https://goodhopelfa.leaguerepublic.com/index.html" target="_blank" rel="noreferrer">
+            Open League Site
+          </a>
+        </div>
+      </div>
+
+      <div class="side-stack">
+        <div class="panel mini-card">
+          <div class="eyebrow">Competition</div>
+          <div class="mini-value">GHLFA</div>
+          <p>Official tabbed feed connected and live for public viewing.</p>
+        </div>
+
+        <div class="panel mini-card">
+          <div class="eyebrow">Contact</div>
+          <div class="mini-value" style="font-size:22px;">goodhopelfa7806@gmail.com</div>
+          <p>Use this email for club-related enquiries and communication.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quick-links">
+      <a class="quick-link" href="https://goodhopelfa.leaguerepublic.com/index.html" target="_blank" rel="noreferrer">
+        <div class="quick-link-title">Public League Site</div>
+        <div class="quick-link-text">Open the full public LeagueRepublic site in a new tab.</div>
+      </a>
+
+      <a class="quick-link" href="https://stephanonkosi29-netizen.github.io/good-hope-fa-app/" target="_blank" rel="noreferrer">
+        <div class="quick-link-title">Public App Link</div>
+        <div class="quick-link-text">Share this app with players, supporters, parents and coaches.</div>
+      </a>
+
+      <a class="quick-link" href="#official-feed">
+        <div class="quick-link-title">Official Match Centre</div>
+        <div class="quick-link-text">Jump directly to the live league feed below.</div>
+      </a>
+    </div>
+
+    <div class="panel feed-card" id="official-feed">
+      <div class="eyebrow">Official Feed</div>
+      <h2>LeagueRepublic Match Centre</h2>
+      <p style="margin:0;color:#475569;font-size:15px;">
+        Use the built-in tabs to switch across division, match hub, standings, team stats and player stats.
+      </p>
+
+      <div class="embed-shell">
+        <div id="lr-embed">Loading league data...</div>
+      </div>
+    </div>
+
+    <div class="panel about-card">
+      <div class="eyebrow">About</div>
+      <h2>Why this app works well</h2>
+      <div class="about-grid">
+        <div class="about-box">
+          <h3>Official data</h3>
+          <p>The live feed is powered by your LeagueRepublic embed, so the public sees trusted competition information.</p>
+        </div>
+        <div class="about-box">
+          <h3>Easy sharing</h3>
+          <p>This page gives you one clean public link to send to supporters without sending them into the admin area.</p>
+        </div>
+        <div class="about-box">
+          <h3>Mobile friendly</h3>
+          <p>The layout is optimised for phone viewing so users can save it to their home screen like an app.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <strong>Good Hope FA</strong>
+        <span>Official Public Match Centre</span>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <span>goodhopelfa7806@gmail.com</span>
+      </div>
+    </div>
   </div>
 
   <script>
     function copyLeagueLink() {
-      navigator.clipboard.writeText('https://goodhopelfa.leaguerepublic.com/index.html');
-      alert('League link copied');
+      navigator.clipboard.writeText('https://stephanonkosi29-netizen.github.io/good-hope-fa-app/');
+      alert('App link copied');
     }
+
     var embedID = '673657578';
   </script>
   <script src="https://api.leaguerepublic.com/client/api/embed/lr-embed.js"></script>
