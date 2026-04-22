@@ -410,7 +410,41 @@
         align-items: center;
         padding: 22px 22px;
       }
-    }
+    }/* === SKY BLUE ENHANCEMENT (TEAM + POINTS) === */
+
+/* TEAM NAME COLUMN */
+#lr-embed table tbody tr td:nth-child(2) {
+  background: linear-gradient(90deg, #1da1e2, #2bb7ff) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 6px;
+  padding-left: 10px !important;
+}
+
+/* TEAM TEXT (links) */
+#lr-embed table tbody tr td:nth-child(2) a {
+  color: #ffffff !important;
+}
+
+/* REMOVE BACKGROUND FROM LOGO AREA (so it doesn’t look boxed weirdly) */
+#lr-embed table tbody tr td:nth-child(2) img {
+  background: transparent !important;
+}
+
+/* POINTS COLUMN (last column) */
+#lr-embed table tbody tr td:last-child {
+  background: linear-gradient(180deg, #1da1e2, #2bb7ff) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* HOVER FIX (so it doesn’t break styling) */
+#lr-embed table tbody tr:hover td:nth-child(2),
+#lr-embed table tbody tr:hover td:last-child {
+  filter: brightness(1.05);
+}
   </style>
 </head>
 <body>
