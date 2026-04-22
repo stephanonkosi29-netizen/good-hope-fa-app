@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Good Hope FA</title>
 
-  <meta name="theme-color" content="#153a8a" />
+  <meta name="theme-color" content="#123b86" />
   <meta name="description" content="Good Hope FA Official Public Match Centre" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="Logo.png" />
@@ -16,15 +16,21 @@
     }
 
     :root {
-      --blue-dark: #153a8a;
-      --blue-mid: #1d75c7;
-      --blue-light: #27b7df;
-      --text: #0f172a;
-      --muted: #475569;
-      --panel: rgba(255, 255, 255, 0.94);
-      --border: #dbeafe;
-      --bg-soft: #eef8ff;
-      --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      --blue-900: #123b86;
+      --blue-800: #1d5fb8;
+      --blue-600: #25aee0;
+      --blue-050: #eef8ff;
+      --blue-100: #dbeeff;
+      --text-900: #0f172a;
+      --text-600: #475569;
+      --white: #ffffff;
+      --gold: #f2b632;
+      --shadow-lg: 0 18px 50px rgba(15, 23, 42, 0.10);
+      --shadow-md: 0 10px 28px rgba(15, 23, 42, 0.08);
+      --radius-xl: 26px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --max: 1180px;
     }
 
     html {
@@ -34,170 +40,231 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top left, #d9f4ff 0%, #eef8ff 30%, #f5f9fc 60%, #eef4f8 100%);
-      color: var(--text);
+      color: var(--text-900);
+      background:
+        radial-gradient(circle at top left, #d8f4ff 0%, #edf8ff 28%, #f7fbff 58%, #eef4f8 100%);
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--blue-light), var(--blue-mid) 55%, var(--blue-dark) 100%);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-800) 52%, var(--blue-900) 100%);
       color: white;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(21, 58, 138, 0.18);
+      box-shadow: 0 16px 40px rgba(18, 59, 134, 0.20);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      filter: blur(2px);
+    }
+
+    .hero::before {
+      width: 240px;
+      height: 240px;
+      top: -80px;
+      right: -40px;
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      left: -60px;
+      bottom: -70px;
     }
 
     .hero-inner {
-      max-width: 1180px;
+      position: relative;
+      z-index: 1;
+      max-width: var(--max);
       margin: 0 auto;
       padding: 22px 16px 34px;
+      text-align: center;
     }
 
-    .hero img {
-      width: 86px;
-      height: 86px;
+    .hero-logo {
+      width: 84px;
+      height: 84px;
       object-fit: contain;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.14);
       padding: 8px;
       margin-bottom: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
     .hero h1 {
       margin: 0;
-      font-size: 30px;
-      line-height: 1.08;
+      font-size: 31px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
       font-weight: 800;
-      letter-spacing: -0.02em;
     }
 
     .hero p {
       margin: 8px 0 0;
       font-size: 16px;
       color: #e0f2fe;
+      font-weight: 600;
     }
 
     .hero-sub {
-      margin-top: 14px;
-      font-size: 13px;
-      color: #dbeafe;
       max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.5;
+      margin: 12px auto 0;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #dbeafe;
     }
 
     .page {
-      max-width: 1180px;
-      margin: -18px auto 28px;
+      max-width: var(--max);
+      margin: -16px auto 32px;
       padding: 0 10px;
+      position: relative;
+      z-index: 2;
     }
 
-    .top-grid {
+    .info-bar {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 12px;
       margin-bottom: 14px;
     }
 
     .panel {
-      background: var(--panel);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
       backdrop-filter: blur(6px);
     }
 
-    .hero-card,
-    .mini-card,
-    .feed-card,
-    .about-card {
-      padding: 16px;
+    .info-card {
+      padding: 16px 18px;
     }
 
-    .eyebrow {
-      font-size: 12px;
-      font-weight: 700;
+    .info-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .info-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #0284c7;
-      margin-bottom: 8px;
+      color: var(--blue-800);
+      margin-bottom: 6px;
     }
 
-    .hero-card h2,
-    .feed-card h2,
-    .about-card h2 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: var(--text);
-      line-height: 1.3;
-    }
-
-    .hero-card p,
-    .about-card p,
-    .mini-card p,
-    .about-box p {
-      margin: 0;
-      line-height: 1.6;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .mini-value {
+    .info-title {
       font-size: 18px;
       font-weight: 800;
-      color: var(--text);
-      margin-bottom: 8px;
-      word-break: break-word;
-      line-height: 1.35;
+      line-height: 1.3;
+      margin: 0;
     }
 
-    .feed-card {
+    .info-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-600);
+      margin: 0;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7fcff, #ecf7ff);
+      border: 1px solid var(--blue-100);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-900);
+      word-break: break-word;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--gold), #e39d14);
+      box-shadow: 0 0 0 6px rgba(242, 182, 50, 0.16);
+      flex: 0 0 auto;
+    }
+
+    .main-card {
+      overflow: hidden;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.96);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.92);
       margin-bottom: 14px;
     }
 
+    .main-card-head {
+      padding: 18px 18px 12px;
+      background:
+        linear-gradient(180deg, rgba(237,248,255,0.95), rgba(255,255,255,0.96));
+      border-bottom: 1px solid #e6eef8;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--blue-800);
+      margin-bottom: 8px;
+    }
+
+    .main-title {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .main-sub {
+      margin: 8px 0 0;
+      color: var(--text-600);
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 760px;
+    }
+
+    .embed-wrap {
+      padding: 8px;
+      background: linear-gradient(180deg, #f9fcff, #f4f8fb);
+    }
+
     .embed-shell {
-      margin-top: 12px;
-      background: #f8fafc;
-      border-radius: 16px;
-      padding: 6px;
-      border: 1px solid #e2e8f0;
+      border-radius: 22px;
       overflow: hidden;
+      background: #f8fafc;
+      border: 1px solid #dfe8f1;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
     }
 
     #lr-embed {
       min-height: 240px;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .about-box {
-      border-radius: 16px;
-      background: linear-gradient(135deg, #f8fdff, #eef8ff);
-      border: 1px solid var(--border);
-      padding: 14px;
-    }
-
-    .about-box h3 {
-      margin: 0 0 8px;
-      font-size: 15px;
-      color: var(--text);
-    }
-
     .footer {
       margin-top: 16px;
-      background: linear-gradient(135deg, var(--blue-dark), #0f2e6f);
+      background: linear-gradient(135deg, var(--blue-900), #0f2e6f);
       color: white;
-      border-radius: 20px;
+      border-radius: 24px;
+      box-shadow: 0 14px 34px rgba(18, 59, 134, 0.22);
       padding: 18px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      box-shadow: 0 12px 28px rgba(21, 58, 138, 0.2);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
     }
 
     .footer strong {
@@ -207,24 +274,37 @@
     }
 
     .footer span {
-      color: #dbeafe;
+      display: block;
       font-size: 14px;
+      color: #dbeafe;
       line-height: 1.5;
     }
 
-    /* Tablet */
-    @media (min-width: 601px) {
+    .footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: start;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.10);
+      color: #eff6ff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    @media (min-width: 700px) {
       .hero-inner {
-        padding: 28px 20px 38px;
+        padding: 26px 20px 38px;
       }
 
-      .hero img {
+      .hero-logo {
         width: 96px;
         height: 96px;
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 40px;
       }
 
       .hero p {
@@ -232,39 +312,45 @@
       }
 
       .page {
-        margin-top: -20px;
+        margin-top: -18px;
         padding: 0 14px;
       }
 
-      .hero-card,
-      .mini-card,
-      .feed-card,
-      .about-card {
-        padding: 20px;
+      .info-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      .embed-shell {
+      .main-card-head {
+        padding: 22px 22px 14px;
+      }
+
+      .main-title {
+        font-size: 28px;
+      }
+
+      .embed-wrap {
         padding: 10px;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
+      .footer {
+        padding: 20px 20px;
       }
     }
 
-    /* Desktop */
-    @media (min-width: 901px) {
+    @media (min-width: 980px) {
       .hero-inner {
-        padding: 32px 20px 42px;
+        padding: 28px 22px 42px;
       }
 
-      .hero img {
-        width: 110px;
-        height: 110px;
+      .hero-logo {
+        width: 108px;
+        height: 108px;
       }
 
       .hero h1 {
-        font-size: 46px;
+        font-size: 48px;
       }
 
       .hero p {
@@ -276,104 +362,102 @@
       }
 
       .page {
-        margin: -24px auto 40px;
+        margin: -22px auto 40px;
         padding: 0 16px;
       }
 
-      .top-grid {
-        grid-template-columns: 1.45fr 0.85fr;
-        gap: 18px;
+      .info-bar {
+        grid-template-columns: 1.25fr 0.85fr;
+        gap: 16px;
         margin-bottom: 18px;
       }
 
-      .hero-card,
-      .mini-card,
-      .feed-card,
-      .about-card {
-        padding: 22px;
+      .info-card {
+        padding: 18px 20px;
       }
 
-      .mini-value {
-        font-size: 22px;
+      .main-card-head {
+        padding: 24px 24px 16px;
       }
 
-      .embed-shell {
+      .main-title {
+        font-size: 32px;
+      }
+
+      .main-sub {
+        font-size: 15px;
+      }
+
+      .embed-wrap {
         padding: 12px;
       }
 
       .footer {
-        flex-direction: row;
-        justify-content: space-between;
+        grid-template-columns: 1fr auto;
         align-items: center;
-        padding: 22px;
-        gap: 16px;
+        padding: 22px 22px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
+  <header class="hero">
     <div class="hero-inner">
-      <img src="Logo.png" alt="Good Hope FA Logo" />
+      <img src="Logo.png" alt="Good Hope FA Logo" class="hero-logo" />
       <h1>Good Hope FA</h1>
       <p>Official Public Match Centre</p>
-      <div class="hero-sub">Follow fixtures, results, standings and player performance in one place</div>
+      <div class="hero-sub">
+        Follow fixtures, results, standings and player performance in one place.
+      </div>
     </div>
-  </div>
+  </header>
 
-  <div class="page">
-    <div class="top-grid">
-      <div class="panel hero-card">
-        <div class="eyebrow">Club Hub</div>
-        <h2>Welcome to the Good Hope FA match centre</h2>
-        <p>
-          Welcome to the official Good Hope FA match centre. Stay up to date with fixtures, results,
-          standings, and player performance in one place. This platform is designed for players,
-          coaches, parents and supporters to easily follow the progress of the league.
+  <main class="page">
+    <section class="info-bar">
+      <div class="panel info-card">
+        <div class="info-label">Club Hub</div>
+        <h2 class="info-title">Welcome to the Good Hope FA match centre</h2>
+        <p class="info-text">
+          Stay up to date with fixtures, results, standings and player performance in one place.
+          This platform is designed for players, coaches, parents and supporters to follow the league with ease.
         </p>
       </div>
 
-      <div class="panel mini-card">
-        <div class="eyebrow">Contact</div>
-        <div class="mini-value">goodhopelfa7806@gmail.com</div>
-        <p>Use this email for club-related enquiries and communication.</p>
-      </div>
-    </div>
-
-    <div class="panel feed-card" id="official-feed">
-      <div class="eyebrow">Official Feed</div>
-      <h2>Match Centre</h2>
-      <div class="embed-shell">
-        <div id="lr-embed">Loading league data...</div>
-      </div>
-    </div>
-
-    <div class="panel about-card">
-      <div class="eyebrow">About</div>
-      <h2>Why this app works well</h2>
-      <div class="about-grid">
-        <div class="about-box">
-          <h3>Official data</h3>
-          <p>The live feed is powered by your LeagueRepublic embed, so the public sees trusted competition information.</p>
-        </div>
-        <div class="about-box">
-          <h3>Mobile friendly</h3>
-          <p>The layout is optimised for phone viewing so users can save it to their home screen like an app.</p>
+      <div class="panel info-card">
+        <div class="info-label">Contact</div>
+        <div class="contact-chip">
+          <span class="dot"></span>
+          <span>goodhopelfa7806@gmail.com</span>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="footer">
+    <section class="main-card" id="official-feed">
+      <div class="main-card-head">
+        <div class="eyebrow">Live Match Centre</div>
+        <h2 class="main-title">Good Hope FA Competitions</h2>
+        <p class="main-sub">
+          Official league views for division, match hub, standings, team stats and player stats.
+        </p>
+      </div>
+
+      <div class="embed-wrap">
+        <div class="embed-shell">
+          <div id="lr-embed">Loading league data...</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
       <div>
         <strong>Good Hope FA</strong>
         <span>Official Public Match Centre</span>
+        <span>Contact: goodhopelfa7806@gmail.com</span>
       </div>
-      <div>
-        <strong>Contact</strong>
-        <span>goodhopelfa7806@gmail.com</span>
-      </div>
-    </div>
-  </div>
+
+      <div class="footer-badge">Powered by official league data</div>
+    </footer>
+  </main>
 
   <script>
     var embedID = '673657578';
