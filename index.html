@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Good Hope FA</title>
+
+  <meta name="theme-color" content="#153a8a" />
+  <meta name="description" content="Good Hope FA Official Public Match Centre" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="Logo.png" />
+
   <style>
     * {
       box-sizing: border-box;
@@ -319,5 +325,13 @@
     var embedID = '673657578';
   </script>
   <script src="https://api.leaguerepublic.com/client/api/embed/lr-embed.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js');
+      });
+    }
+  </script>
 </body>
 </html>
