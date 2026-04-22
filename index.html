@@ -9,93 +9,6 @@
   <meta name="description" content="Good Hope FA Official Public Match Centre" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="Logo.png" />
-/* === PREMIUM TABLE POLISH === */
-
-/* smoother motion */
-#lr-embed table tbody tr,
-#lr-embed table tbody tr td,
-#lr-embed table tbody tr td a {
-  transition: all 0.18s ease;
-}
-
-/* row hover */
-#lr-embed table tbody tr:hover {
-  transform: translateY(-1px);
-  box-shadow: inset 0 0 0 9999px rgba(43, 183, 255, 0.06);
-}
-
-/* more premium team cells */
-#lr-embed table tbody tr td:nth-child(2) {
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
-  letter-spacing: 0.01em;
-}
-
-/* point column stronger */
-#lr-embed table tbody tr td:last-child {
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.10),
-    0 2px 8px rgba(29, 161, 226, 0.18);
-}
-
-/* first place premium accent */
-#lr-embed table tbody tr:nth-child(1) td:nth-child(2),
-#lr-embed table tbody tr:nth-child(1) td:last-child {
-  background: linear-gradient(90deg, #27b7ff, #56ccff) !important;
-  color: #ffffff !important;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.12),
-    0 4px 14px rgba(39, 183, 255, 0.22);
-}
-
-/* second place slightly softer */
-#lr-embed table tbody tr:nth-child(2) td:nth-child(2),
-#lr-embed table tbody tr:nth-child(2) td:last-child {
-  background: linear-gradient(90deg, #1998df, #39b4f6) !important;
-  color: #ffffff !important;
-}
-
-/* third place slightly deeper */
-#lr-embed table tbody tr:nth-child(3) td:nth-child(2),
-#lr-embed table tbody tr:nth-child(3) td:last-child {
-  background: linear-gradient(90deg, #1689cf, #2ea7ef) !important;
-  color: #ffffff !important;
-}
-
-/* slightly cleaner table header */
-#lr-embed thead th,
-#lr-embed .table-header,
-#lr-embed .header-row {
-  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.12);
-  letter-spacing: 0.03em;
-}
-
-/* subtle card feel inside rows */
-#lr-embed table tbody tr td {
-  position: relative;
-}
-
-/* better spacing for team logos */
-#lr-embed table tbody tr td:nth-child(2) img {
-  margin-right: 8px !important;
-  border-radius: 4px;
-}
-
-/* make numbers feel cleaner */
-#lr-embed table tbody tr td:not(:nth-child(2)) {
-  font-weight: 600;
-}
-
-/* keep points extra bold */
-#lr-embed table tbody tr td:last-child {
-  font-weight: 800 !important;
-}
-
-/* softer table shell */
-.table-shell {
-  box-shadow:
-    0 14px 36px rgba(15, 28, 56, 0.16),
-    inset 0 1px 0 rgba(255,255,255,0.04);
-}
   <style>
     * {
       box-sizing: border-box;
@@ -531,6 +444,82 @@
 #lr-embed table tbody tr:hover td:last-child {
   filter: brightness(1.05);
 }
+   /* your existing CSS above */
+
+  /* === PREMIUM TABLE POLISH === */
+  #lr-embed table tbody tr,
+  #lr-embed table tbody tr td,
+  #lr-embed table tbody tr td a {
+    transition: all 0.18s ease;
+  }
+
+  #lr-embed table tbody tr:hover {
+    transform: translateY(-1px);
+    box-shadow: inset 0 0 0 9999px rgba(43, 183, 255, 0.06);
+  }
+
+  #lr-embed table tbody tr td:nth-child(2) {
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    letter-spacing: 0.01em;
+  }
+
+  #lr-embed table tbody tr td:last-child {
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,0.10),
+      0 2px 8px rgba(29, 161, 226, 0.18);
+  }
+
+  #lr-embed table tbody tr:nth-child(1) td:nth-child(2),
+  #lr-embed table tbody tr:nth-child(1) td:last-child {
+    background: linear-gradient(90deg, #27b7ff, #56ccff) !important;
+    color: #ffffff !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,0.12),
+      0 4px 14px rgba(39, 183, 255, 0.22);
+  }
+
+  #lr-embed table tbody tr:nth-child(2) td:nth-child(2),
+  #lr-embed table tbody tr:nth-child(2) td:last-child {
+    background: linear-gradient(90deg, #1998df, #39b4f6) !important;
+    color: #ffffff !important;
+  }
+
+  #lr-embed table tbody tr:nth-child(3) td:nth-child(2),
+  #lr-embed table tbody tr:nth-child(3) td:last-child {
+    background: linear-gradient(90deg, #1689cf, #2ea7ef) !important;
+    color: #ffffff !important;
+  }
+
+  #lr-embed thead th,
+  #lr-embed .table-header,
+  #lr-embed .header-row {
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.12);
+    letter-spacing: 0.03em;
+  }
+
+  #lr-embed table tbody tr td {
+    position: relative;
+  }
+
+  #lr-embed table tbody tr td:nth-child(2) img {
+    margin-right: 8px !important;
+    border-radius: 4px;
+  }
+
+  #lr-embed table tbody tr td:not(:nth-child(2)) {
+    font-weight: 600;
+  }
+
+  #lr-embed table tbody tr td:last-child {
+    font-weight: 800 !important;
+  }
+
+  .table-shell {
+    box-shadow:
+      0 14px 36px rgba(15, 28, 56, 0.16),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+</style>
   </style>
 </head>
 <body>
